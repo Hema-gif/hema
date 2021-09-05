@@ -26,6 +26,19 @@ public class SelectRecords {
 				System.out.print(rs.getString("director")+"\t");
 				System.out.print(rs.getInt("yearOfRelease")+"\t");
 			}
+			//qurey using actor name
+			boolean c = st.execute("select * from movies where actor = 'vteja'");
+			rs = st.getResultSet();
+			System.out.println("name\tactor\tactress\tdirector\tyearofrelease");
+			System.out.println("-----------------------------");
+			while(rs.next()) {
+				System.out.print(rs.getString("name")+"\t");
+				System.out.print(rs.getString("actor")+"\t");
+				System.out.print(rs.getString("actress")+"\t");
+				System.out.print(rs.getString("director")+"\t");
+				System.out.print(rs.getInt("yearOfRelease")+"\t");
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
