@@ -8,8 +8,8 @@ public class CreateTable {
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "hema");
 		Statement st = con.createStatement();
-		st.executeUpdate("create table emp1(ENO number(3) primary key, ENAME varchar2(10), ESAL float(5), EADDR varchar2(10))");
-		System.out.println("Table emp1 Created Successfully");
+		st.executeUpdate("create table movies(name varchar2(20),actor varchar2(20),actress varchar2(20),director varchar(20),yearOfrelease number(4)");
+		System.out.println("Table movie Created Successfully");
 		st.close();
 		con.close();
 	}

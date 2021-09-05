@@ -14,16 +14,17 @@ public class SelectRecords {
 			Class.forName("oracle.jdbc.OracleDriver");
 			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "hema");
 			st = con.createStatement();
-			boolean b = st.execute("select * from emp1");
+			boolean b = st.execute("select * from movies");
 			System.out.println(b);
 			rs = st.getResultSet();
-			System.out.println("ENO\tENAME\tESAL\tEADDR");
+			System.out.println("name\tactor\tactress\tdirector\tyearofrelease");
 			System.out.println("-----------------------------");
 			while(rs.next()) {
-				System.out.print(rs.getInt("ENO")+"\t");
-				System.out.print(rs.getString("ENAME")+"\t");
-				System.out.print(rs.getFloat("ESAL")+"\t");
-				System.out.print(rs.getString("EADDR")+"\n");
+				System.out.print(rs.getString("name")+"\t");
+				System.out.print(rs.getString("actor")+"\t");
+				System.out.print(rs.getString("actress")+"\t");
+				System.out.print(rs.getString("director")+"\t");
+				System.out.print(rs.getInt("yearOfRelease")+"\t");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
